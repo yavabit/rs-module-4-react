@@ -1,9 +1,9 @@
 import './App.css'
-import { Demo } from './components/Demo/Demo'
+import { DemoTaskOne } from './components/DemoTaskOne/DemoTaskOne'
 
 function App() {
   return (
-    <div>Hello</div>
+    <DemoTaskOne />
   )
 }
 
