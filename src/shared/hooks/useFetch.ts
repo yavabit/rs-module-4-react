@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { apiParams, IPost } from "../types/api";
+import { useCallback, useEffect, useState } from "react";
+import { apiParams } from "../types/api";
 
 export const useFetch = <T>(url: string) => {
 
@@ -17,22 +17,22 @@ export const useFetch = <T>(url: string) => {
 		}
 	}
 
-	const sendRequest = ({params}: {params?: apiParams} = {}) => {
+	const sendRequest = useCallback(({params}: {params?: apiParams} = {}) => {
 		setIsLoading(true)
 		setData(null);
 		setError(null);
 
 		axios.get(url + getParamsStringify(params))
 			.then(res => {
-				setIsLoading(false);
-				console.log(res);
-				res.data && setData(res.data);
+				if(res.data) {
+					setData(res.data);
+				}
 			})
 			.catch(err => {
-				setIsLoading(false)
 				setError(err.message)
 			})
-	}
+			.finally(() => setIsLoading(false))
+	}, [url])
 
 	const refetch = sendRequest
 
