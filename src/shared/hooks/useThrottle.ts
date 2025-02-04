@@ -14,7 +14,7 @@ export const useThrottle = (value: unknown, interval = 500) => {
 				setThrottledValue(value)
 			}, interval)
 
-			return () => clearInterval(timer)
+			return () => clearTimeout(timer)
 		}
 	}, [value, interval])
 
