@@ -1,10 +1,8 @@
 import './App.css'
-import { Demo } from './components/Demo/Demo'
+import { AdditionalDemoTaskOne } from './components/AdditionalDemoTaskOne/AdditionalDemoTaskOne'
 
 function App() {
-  return (
-    <div>Hello</div>
-  )
+  return (<AdditionalDemoTaskOne />)
 }
 
 export default App
