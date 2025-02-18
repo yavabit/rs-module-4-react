@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import './App.css'
-import { Demo } from './components/Demo/Demo'
 
 function App() {
+
+  const [view, setView] = useState<string>('signin');
+
   return (
-    <div>Hello</div>
+    <>
+      
+    </>
   )
 }
 
