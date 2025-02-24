@@ -69,14 +69,16 @@ export const Input = (props: InputProps) => {
                 )
             }
             {props.description && <span className={styles['description']}>{props.description}</span>}
+            {props.leftSection && <span className={styles['left-section']}>{props.leftSection}</span>}
             <input 
                 {...inputProps}
                 className={
                     styles['input-field'] 
                     + (props.variant ? ` ${styles[props.variant]}` : ` ${styles['default']}`)
-                    + (props.error ? ` ${styles['error']}` : '')}
+                    + (props.error ? ` ${styles['error']}` : '')
+                    + (props.leftSection ? ` ${styles['with-section']}` : '')
+                }
                 >
-                {props.leftSection && <span></span>}
             </input>
             {props.error && <span style={{fontSize: '12px'}} className={styles['error']}>{props.error}</span>}
         </div>

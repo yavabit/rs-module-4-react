@@ -2,6 +2,7 @@ import { FormEvent, useRef, useState } from "react";
 import { checkEmail, checkNickname } from "../../shared/helpers/auth";
 import { Input } from "../UI/Input";
 import "./Signup.scss";
+import { IconAt } from "@tabler/icons-react";
 
 const fields = {
 	name: '',
@@ -70,6 +71,7 @@ export const Signup = () => {
 					placeholder="Введите ник"
 					label="Ник"
 					error={error['nickname'] === '' ? undefined : error['nickname']}
+					leftSection={<IconAt color="gray"/>}
 				/>
 				<Input
 					type="email"
