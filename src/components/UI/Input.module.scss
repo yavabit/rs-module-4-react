@@ -1,0 +1,68 @@
+.input-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    label {
+        display: inline-block;
+        font-weight: 600;
+        span.asterisk {
+            margin-left: 5px;
+            color: red;
+        }
+    }
+    .description {
+        color: rgb(134, 142, 150);
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .input-field {
+        width: 100%;
+        padding: 10px 15px; 
+        border: 1px solid #cec4da;
+        border-radius: 0.25rem;
+
+        &.filled {
+            background-color: rgb(241, 243, 245);
+            border: none;
+        }
+        &.unstyled {
+            border: none;
+            border-radius: 0%;
+        }
+        &.error {
+            border-color: red;
+        }
+        &:focus {
+            border-color: #646cff;
+            outline: none;
+        }
+        &.with-section {
+            padding-left: 35px;
+        }
+    }
+    .error {
+        color: red;
+    }
+
+    &.radio-input {
+        flex-direction: row;
+        align-items: center;
+        label {
+            width: 30%;
+            text-align: left;
+            font-weight: normal;
+            font-size: 14px;
+        }
+        input {
+            width: auto;
+            margin-left: 10px;
+        }
+    }
+    position: relative;
+    .left-section {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+    }
+}
